@@ -1,15 +1,18 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.androidx.navigation.safeargs)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt.android)
 }
 
 android {
-    namespace = "com.flashcards.FlashcardQuizApp"
-    compileSdk = 35
+    namespace = "com.studyFlow"
+    compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.flashcards.FlashcardQuizApp"
-        minSdk = 26
-        targetSdk = 35
+        applicationId = "com.studyFlow"
+        minSdk = 30
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -29,15 +32,47 @@ android {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
     }
+    buildFeatures {
+        viewBinding = true
+    }
+    buildToolsVersion = "36.0.0"
 }
 
 dependencies {
 
-    implementation (libs.gson)
+    //Room Database
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.coordinatorlayout)
+    ksp(libs.androidx.room.compiler)
+
+    // hilt DI
+    implementation (libs.hilt.android)
+    ksp (libs.hilt.compiler)
+
+    // lottie animation
+    implementation(libs.lottie)
+
+    // Glide
+    implementation(libs.glide)
+
+    // UI Components
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+
+    // ViewModel
+    implementation(libs.legacy.support.v4)
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
+
+    // Navigation
+    implementation(libs.fragment.ktx)
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.ui.ktx)
+
+    // Unit Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
