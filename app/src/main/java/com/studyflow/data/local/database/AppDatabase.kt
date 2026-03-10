@@ -11,7 +11,7 @@ import com.studyflow.data.local.entity.SessionResultEntity
 
 @Database(
     entities = [DeckEntity::class, CardEntity::class, SessionResultEntity::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -27,7 +27,7 @@ abstract class AppDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "flashcard_db"
+                    "StudyFlow_db"
                 )
                 .fallbackToDestructiveMigration(false) // Simple for dev, use migration in prod
                 .build()
