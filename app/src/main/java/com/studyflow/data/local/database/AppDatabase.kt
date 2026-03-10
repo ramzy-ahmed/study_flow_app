@@ -29,7 +29,7 @@ abstract class AppDatabase : RoomDatabase() {
                     AppDatabase::class.java,
                     "flashcard_db"
                 )
-                .fallbackToDestructiveMigration() // Simple for dev, use migration in prod
+                .fallbackToDestructiveMigration(false) // Simple for dev, use migration in prod
                 .build()
                 INSTANCE = instance
                 instance
