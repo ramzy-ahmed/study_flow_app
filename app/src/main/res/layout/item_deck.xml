@@ -1,0 +1,100 @@
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/bg_surface"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="3dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDeckIcon"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ill_programming"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvDeckTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/lexend_bold"
+            android:text="Spanish"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingHorizontal="12dp"
+            android:textAlignment="center"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/ivDeckIcon" />
+
+        <TextView
+            android:id="@+id/tvCardCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_badge_soft_blue"
+            android:fontFamily="@font/lexend_medium"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="24 Cards"
+            android:textColor="@color/primary_blue"
+            android:textSize="11sp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivDeckIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/deckProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="16dp"
+            android:progress="40"
+            app:indicatorColor="@color/primary_blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvDeckProgress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDeckTitle"
+            app:trackColor="#F1F5F9"
+            app:trackCornerRadius="10dp"
+            app:trackThickness="6dp" />
+
+        <TextView
+            android:id="@+id/tvDeckProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend_medium"
+            android:text="40%"
+            android:textColor="@color/text_secondary"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@id/deckProgress"
+            app:layout_constraintBottom_toTopOf="@+id/deckProgress"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnMenu"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:padding="6dp"
+            app:tint="@color/primary_blue"
+            android:background="@drawable/bg_badge_soft_blue"
+            app:srcCompat="@drawable/ic_menu_dots_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
