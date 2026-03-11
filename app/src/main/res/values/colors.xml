@@ -1,63 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary_background">#1E2733</color>
-    <color name="secondary_background">#293545</color>
-    <color name="light_background">#ECEFF1</color>
-    <color name="primary_color">#6A1B9A</color>
-    <color name="secondary_color">#55FFFFFF</color>
-    <color name="tertiary_color">#4CAF50</color>
-    <color name="dark_text_color">#FFFFFF</color>
-    <color name="light_text_color">#212121</color>
-    <color name="gradient_start_color">#1976D2</color>
-    <color name="gradient_end_color">#424242</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-
-    <!--   new color for the new design   -->
+    <!-- الألوان الأساسية -->
     <color name="primary_blue">#4F46E5</color>
-    <color name="primary_blue_10">#1A135BEC</color>
-    <color name="background_light">#F8FAFC</color>
-    <color name="surface_white">#FFFFFF</color>
-    <color name="text_main">#0F172A</color>
-    <color name="text_secondary">#64748B</color>
-
-    <!--  Dark Theme Colors from Image  -->
-    <color name="dark_bg">#0A0D14</color>
-    <color name="dark_surface">#151921</color>
-    <color name="dark_card">#1A1D26</color>
-    <color name="quiz_button_bg">#4F46E5</color>
-    <color name="review_button_bg">#21262E</color>
-    <color name="tag_history_bg">#25284D</color>
-    <color name="tag_history_text">#818CF8</color>
-    <color name="text_primary_dark">#FFFFFF</color>
-    <color name="text_secondary_dark">#94A3B8</color>
-    <color name="divider_color">#2D3748</color>
-
-    <!--  Accent Colors for Cards  -->
-    <color name="card_accent_purple">#6366F1</color>
-    <color name="card_accent_green">#10B981</color>
-    <color name="card_accent_orange">#F59E0B</color>
-    <color name="card_accent_gray">#4B5563</color>
-
-    <!--  icons color  -->
-    <color name="orange">#F59E0B</color>
+    <color name="primary_blue_soft">#1A135BEC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
     <color name="purple">#8B5CF6</color>
+    <color name="blue">#0284C7</color>
+    <color name="orange">#F59E0B</color>
     <color name="green">#10B981</color>
     <color name="red">#E11D48</color>
-    <color name="blue">#0284C7</color>
+    <color name="indigo">#818CF8</color>
 
-    <color name="green_primary">#10B981</color>
-    <color name="red_primary">#E11D48</color>
-    <color name="orange_icon">#F59E0B</color>
+    <!-- ألوان الخلفيات (ستتغير في الوضع الليلي) -->
+    <color name="bg_app">#F8FAFC</color>
+    <color name="bg_surface">#FFFFFF</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="soft_bg_blue">#DBEEFF</color>
+    <color name="soft_bg_green">#F0FDF4</color>
+    <color name="soft_bg_red">#FEF2F2</color>
+    <color name="soft_bg_orange">#FFF7ED</color>
 
-    <!--  background color  -->
-    <color name="orange_bg">#FFF7ED</color>
-    <color name="purple_bg">#FAF5FF</color>
-    <color name="green_bg">#F0FDF4</color>
-    <color name="indigo_icon">#4F46E5</color>
-    <color name="indigo_bg">#EEF2FF</color>
-    <color name="teal_icon">#0D9488</color>
-    <color name="teal_bg">#F0FDFA</color>
+    <!-- ألوان النصوص -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="text_muted">#94A3B8</color>
+    <color name="text_label">#475569</color>
+    <color name="text_on_dark">#FFFFFF</color>
+
+    <!-- ألوان الحالات والعناصر -->
+    <color name="tag_history_text">#818CF8</color>
+    <color name="tag_history_bg">#25284D</color>
+    <color name="divider_color">#E2E8F0</color>
     <color name="chart_gradient_start">#33135BEC</color>
     <color name="chart_gradient_end">#00135bec</color>
 </resources>
