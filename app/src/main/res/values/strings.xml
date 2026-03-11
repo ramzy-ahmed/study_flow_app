@@ -7,4 +7,24 @@
     <string name="delete_card_message">Are you sure you want to delete this card?</string>
     <string name="no_result_found">No Result Found for %1$s</string>
     <string name="library_empty">Your library is empty</string>
+
+    <!-- Home Screen -->
+    <string name="good_morning">Good morning 👋</string>
+    <string name="user_name_default">Ramzy Ahmed</string>
+    <string name="streak_format">Ready to focus? Your streak is %1$d days.</string>
+    <string name="start_daily_quiz">Start Daily Quiz</string>
+    <string name="daily_quiz_cards_due">%1$d Cards due for review</string>
+    <string name="weekly_focus">Weekly Focus</string>
+    <string name="weekly_focus_desc">You\'re up %1$d%% from last week</string>
+    <string name="weekly_growth_format">+%1$d%%</string>
+    <string name="day_mon">Mon</string>
+    <string name="day_tue">Tue</string>
+    <string name="day_wed">Wed</string>
+    <string name="day_thu">Thu</string>
+    <string name="day_fri">Fri</string>
+    <string name="day_sat">Sat</string>
+    <string name="day_sun">Sun</string>
+    <string name="recent_decks">Recent Decks</string>
+    <string name="see_all">See all</string>
+    <string name="notifications">Notifications</string>
 </resources>
