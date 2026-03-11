@@ -31,7 +31,7 @@
     <!-- ألوان الحالات والعناصر -->
     <color name="tag_history_text">#818CF8</color>
     <color name="tag_history_bg">#25284D</color>
-    <color name="divider_color">#E2E8F0</color>
+    <color name="divider_color">#F1F5F9</color>
     <color name="chart_gradient_start">#33135BEC</color>
     <color name="chart_gradient_end">#00135bec</color>
 </resources>

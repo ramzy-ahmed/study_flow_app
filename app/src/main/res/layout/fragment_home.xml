@@ -56,7 +56,7 @@
                 android:id="@+id/btnNotification"
                 android:layout_width="44dp"
                 android:layout_height="44dp"
-                android:background="@drawable/bg_notification_wrap"
+                android:background="@drawable/bg_solid_rounded_with_stroke"
                 android:padding="11dp"
                 android:contentDescription="@string/notifications"
                 android:src="@drawable/ic_notification"
@@ -169,7 +169,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/gradient_blue_card_v2"
+                        android:background="@drawable/gradient_blue_card"
                         android:paddingHorizontal="24dp">
 
                         <View
