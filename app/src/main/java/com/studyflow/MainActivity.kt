@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         mNavController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.homeFragment, R.id.decksFragment, R.id.states, R.id.profileFragment -> {
+                R.id.homeFragment, R.id.decksFragment, R.id.performanceFragment, R.id.profileFragment -> {
                     binding.bottomNav.visibility = View.VISIBLE
                 }
 

@@ -101,4 +101,8 @@
             android:name="totalCount"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/performanceFragment"
+        android:name="com.studyflow.ui.performance_screen.PerformanceFragment"
+        android:label="PerformanceFragment" />
 </navigation>
