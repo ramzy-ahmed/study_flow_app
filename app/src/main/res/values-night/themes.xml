@@ -1,6 +1,6 @@
 <resources>
     <!-- Dark theme for dark mode. -->
-    <style name="Theme.FlashCardQuizApp.Dark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.StudyFlow" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:statusBarColor">#8E2DE2</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>

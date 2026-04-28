@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true"
+        android:background="@android:color/transparent">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:expandedTitleTextAppearance="@style/headTextExpended"
+            app:expandedTitleMarginBottom="60dp"
+            app:collapsedTitleTextColor="@color/white"
+            app:collapsedTitleTextAppearance="@style/headTextCollapsed"
+            app:expandedTitleTextColor="@color/white"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <ImageView
+                android:id="@+id/deckImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ill_history"
+                app:layout_collapseMode="parallax"
+                app:tintMode="multiply" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_collapseMode="parallax"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/bg_btn_alpha_rounded"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_arrow_small_left"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/btnEdit"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_btn_alpha_rounded"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_pencil"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnMore"
+                    app:layout_constraintTop_toTopOf="@+id/btnMore"
+                    app:tint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/btnMore"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/bg_btn_alpha_rounded"
+                    android:padding="10dp"
+                    android:layout_marginEnd="24dp"
+                    android:src="@drawable/ic_menu_dots"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btnBack"
+                    app:tint="@color/white" />
+
+                <View
+                    android:layout_width="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@drawable/bg_deck_image_placeholder"
+                    android:layout_height="100dp"/>
+
+                <TextView
+                    android:id="@+id/tvCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_bold"
+                    android:text="HISTORY"
+                    android:background="@drawable/dash"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="4dp"
+                    android:layout_marginStart="24dp"
+                    app:layout_constraintTop_toBottomOf="@+id/btnBack"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/tag_history_text"
+                    android:textSize="12sp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:visibility="visible"
+                app:title="Modern History"
+                app:titleTextColor="@color/white"
+                android:elevation="0dp"
+                android:background="@color/bg_surface"
+                app:navigationIcon="@drawable/ic_arrow_small_left"
+                app:navigationIconTint="@color/text_primary"
+                android:layout_height="?attr/actionBarSize"
+                app:contentInsetStart="0dp"
+                app:layout_collapseMode="pin">
+
+                <ImageView
+                    android:id="@+id/toolbarBtnMenu"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="10dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_menu_dots_vertical"
+                    app:tint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/toolbarBtnEdit"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="12dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/ic_pencil"
+                    app:tint="@color/white" />
+
+            </com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-30dp"
+        android:background="@drawable/bg_content_top_rounded"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp">
+
+            <View
+                android:id="@+id/dash"
+                android:layout_width="40dp"
+                android:layout_height="4dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/dash"/>
+
+            <TextView
+                android:id="@+id/titleDescription"
+                android:layout_width="match_parent"
+                android:text="Descrabtion"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:fontFamily="@font/lexend_bold"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_below="@+id/dash"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/lexend_bold"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:layout_below="@+id/titleDescription"
+                android:text="its about egyptian history"
+                android:textColor="@color/text_secondary"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/btnSession"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/tvDescription"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStartQuiz"
+                    android:layout_width="0dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1.6"
+                    android:fontFamily="@font/lexend_bold"
+                    android:text="Start Session"
+                    android:textAllCaps="false"
+                    app:cornerRadius="20dp"
+                    app:iconPadding="0dp"
+                    app:icon="@drawable/ic_play_circle" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnReview"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/lexend_bold"
+                    android:text="Review"
+                    android:textAllCaps="false"
+                    app:cornerRadius="16dp"
+                    app:strokeColor="@color/primary_blue" />
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/stat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btnSession"
+                android:layout_marginTop="24dp"
+                android:clipToPadding="false"
+                android:paddingHorizontal="16dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Cards Stat -->
+                    <LinearLayout
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/bg_stat_card"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_cards"
+                                app:tint="@color/text_secondary" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:fontFamily="@font/lexend_bold"
+                                android:text="CARDS"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvTotalCardsCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/lexend_bold"
+                            android:text="54"
+                            android:textColor="@color/text_primary"
+                            android:textSize="28sp" />
+                    </LinearLayout>
+
+                    <!-- Mastery Stat -->
+                    <LinearLayout
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/bg_stat_card"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_monitoring"
+                                app:tint="@color/green" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:fontFamily="@font/lexend_bold"
+                                android:text="MASTERY"
+                                android:textColor="@color/green"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvMasteryPercent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/lexend_bold"
+                                android:text="82%"
+                                android:textColor="@color/text_primary"
+                                android:textSize="28sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginBottom="4dp"
+                                android:fontFamily="@font/lexend_medium"
+                                android:text="+5%"
+                                android:textColor="@color/green"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Time Stat -->
+                    <LinearLayout
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_stat_card"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_clock"
+                                app:tint="@color/orange" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:fontFamily="@font/lexend_bold"
+                                android:text="TIME"
+                                android:textColor="@color/orange"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tvTotalTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/lexend_bold"
+                            android:text="3h 12m"
+                            android:textColor="@color/text_primary"
+                            android:textSize="28sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/stat"
+                android:layout_marginTop="32dp"
+                android:paddingHorizontal="16dp">
+
+                <TextView
+                    android:id="@+id/tvPreviewTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_bold"
+                    android:text="Preview Cards"
+                    android:textColor="@color/text_primary"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvPreviewCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/dash"
+                    android:fontFamily="@font/lexend_medium"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    android:text="54"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvPreviewTitle"
+                    app:layout_constraintStart_toEndOf="@id/tvPreviewTitle"
+                    app:layout_constraintTop_toTopOf="@id/tvPreviewTitle" />
+
+                <LinearLayout
+                    android:id="@+id/btnFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lexend_medium"
+                        android:text="Filter"
+                        android:textColor="@color/primary_blue"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="4dp"
+                        android:src="@drawable/ic_menu_dots"
+                        app:tint="@color/primary_blue" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/container"
+                android:nestedScrollingEnabled="false"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_preview_card" />
+
+            <LinearLayout
+                android:id="@+id/emptyStateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="16dp"
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_below="@+id/tvDescription"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/animState"
+                    android:layout_width="280dp"
+                    android:layout_height="280dp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/empty_anim" />
+
+                <TextView
+                    android:id="@+id/tvState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend_bold"
+                    android:text="Your library is empty"
+                    android:textColor="@color/primary_blue"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvSubtitleState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/lexend_medium"
+                    android:gravity="center"
+                    android:paddingHorizontal="40dp"
+                    android:text="Tap the button below to create your first study Card."
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/btnAddFirstCard"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_solid_rounded_with_stroke"
+                    android:contentDescription=""
+                    android:padding="16dp"
+                    android:src="@drawable/ic_plus" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/btnAddCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:text="Add Card"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/primary_blue"
+        app:icon="@drawable/ic_plus"
+        app:iconSize="16dp"
+        app:iconTint="@color/white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

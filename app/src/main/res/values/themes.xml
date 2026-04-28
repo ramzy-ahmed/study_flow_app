@@ -1,7 +1,7 @@
 <resources>
     <!-- Base application theme for light mode. -->
-    <style name="Theme.FlashCardQuizApp" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="android:statusBarColor">#8E2DE2</item>
+    <style name="Theme.StudyFlow" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/primary_blue</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
 

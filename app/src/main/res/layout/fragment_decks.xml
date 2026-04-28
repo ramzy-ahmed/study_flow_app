@@ -1,0 +1,155 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app">
+
+    <!-- AppBar & Collapsing Toolbar  -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@color/bg_app"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:collapsedSubtitleTextAppearance="@style/subtitleTextCollapsed"
+            app:collapsedSubtitleTextColor="@color/text_secondary"
+            app:collapsedTitleTextAppearance="@style/headTextCollapsed"
+            app:contentScrim="@color/bg_app"
+            app:expandedSubtitleTextAppearance="@style/subtitleTextExpended"
+            app:expandedSubtitleTextColor="@color/text_secondary"
+            app:expandedTitleMarginBottom="85dp"
+            app:expandedTitleMarginStart="24dp"
+            app:expandedTitleTextAppearance="@style/headTextExpended"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:titleCollapseMode="scale"
+            app:toolbarId="@id/appBar">
+
+            <View
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="-50dp"
+                android:layout_marginEnd="-50dp"
+                android:background="@drawable/bg_circle_pattern_light"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7" />
+
+            <!--   Toolbar   -->
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/appBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:menu="@menu/decks_app_bar_menu"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:subtitle="keep focused ,keep learning"
+                app:title="My Decks" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/searchCard"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:layout_collapseMode="parallax"
+                app:strokeWidth="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/searchBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:drawableStart="@drawable/ic_search"
+                    android:drawablePadding="12dp"
+                    android:fontFamily="@font/lexend_medium"
+                    android:hint="Search your decks..."
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:paddingHorizontal="16dp"
+                    android:textColor="@color/text_primary"
+                    android:textColorHint="@color/text_secondary"
+                    android:textSize="15sp" />
+            </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDecks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="100dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/item_deck" />
+
+    <LinearLayout
+        android:id="@+id/emptyStateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animState"
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/empty_anim" />
+
+        <TextView
+            android:id="@+id/tvState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lexend_bold"
+            android:text="Your library is empty"
+            android:textColor="@color/primary_blue"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvSubtitleState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/lexend_medium"
+            android:gravity="center"
+            android:paddingHorizontal="40dp"
+            android:text="Tap the button below to create your first study deck."
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/btnAddDeck"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_solid_rounded_with_stroke"
+            android:contentDescription=""
+            android:padding="16dp"
+            android:src="@drawable/ic_plus" />
+    </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loadingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading_anim" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
