@@ -10,6 +10,9 @@
         android:name="com.studyflow.ui.home_screen.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_deckDetails"
+            app:destination="@id/deckDetails" />
     </fragment>
 
     <fragment
