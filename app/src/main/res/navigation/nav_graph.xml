@@ -1,6 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
 
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.studyflow.ui.home_screen.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.studyflow.ui.profile_screen.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile"/>
+
+    <fragment
+        android:id="@+id/decksFragment"
+        android:name="com.studyflow.ui.decks_screen.decks_screen.DecksFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_decks">
+
+        <action
+            android:id="@+id/action_decks_to_deckDetails"
+            app:destination="@id/deckDetails"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/action_decks_to_addDeck"
+            app:destination="@id/addDeck"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/deckDetails"
+        android:name="com.studyflow.ui.decks_screen.deck_details_screen.DeckDetailsFragment"
+        android:label="DeckDetails"
+        tools:layout="@layout/fragment_deck_details">
+        <argument
+            android:name="deckId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_deckDetails_to_addCard"
+            app:destination="@id/addCard"/>
+        <action
+            android:id="@+id/action_deckDetails_to_studyFragment"
+            app:destination="@id/studyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addDeck"
+        android:name="com.studyflow.ui.decks_screen.add_deck_screen.AddDeckFragment"
+        tools:layout="@layout/fragment_add_deck"
+        android:label="AddDeck" />
+
+    <fragment
+        android:id="@+id/addCard"
+        android:name="com.studyflow.ui.decks_screen.add_card_screen.AddCardFragment"
+        tools:layout="@layout/fragment_add_card"
+        android:label="AddCard" >
+        <argument
+            android:name="deckId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/studyFragment"
+        tools:layout="@layout/fragment_study"
+        android:label="StudyFragment" >
+        <argument
+            android:name="mode"
+            app:argType="com.studyflow.ui.study_screen.StudyScreen$StudyMode" />
+        <argument
+            android:name="selectedDeck"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_cardReview_to_resultsScreen"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.studyflow.ui.result_screen.ResultsScreen"
+        android:label="ResultFragment"
+        tools:layout="@layout/fragment_results">
+        <argument
+            android:name="correctCount"
+            app:argType="integer" />
+        <argument
+            android:name="incorrectCount"
+            app:argType="integer" />
+        <argument
+            android:name="totalCount"
+            app:argType="integer" />
+    </fragment>
 </navigation>

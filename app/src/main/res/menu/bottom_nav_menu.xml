@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/home"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home"
         android:title="Home" />
     <item
-        android:id="@+id/decks"
+        android:id="@+id/decksFragment"
         android:icon="@drawable/ic_decks"
         android:title="Decks" />
     <item
@@ -13,7 +13,7 @@
         android:icon="@drawable/ic_states"
         android:title="Stats" />
     <item
-        android:id="@+id/profile"
+        android:id="@+id/profileFragment"
         android:icon="@drawable/ic_user"
         android:title="Profile" />
 </menu>
