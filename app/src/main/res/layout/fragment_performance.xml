@@ -25,6 +25,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="36dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -133,6 +134,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
+                    android:backgroundTint="@color/bg_surface"
                     android:layout_margin="4dp"
                     app:cardCornerRadius="24dp"
                     app:cardElevation="2dp">
@@ -173,6 +175,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
+                    android:backgroundTint="@color/bg_surface"
                     android:layout_margin="4dp"
                     app:cardCornerRadius="24dp"
                     app:cardElevation="2dp">
@@ -213,6 +216,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
+                    android:backgroundTint="@color/bg_surface"
                     android:layout_margin="4dp"
                     app:cardCornerRadius="24dp"
                     app:cardElevation="2dp">
@@ -253,6 +257,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_columnWeight="1"
+                    android:backgroundTint="@color/bg_surface"
                     android:layout_margin="4dp"
                     app:cardCornerRadius="24dp"
                     app:cardElevation="2dp">
@@ -296,7 +301,7 @@
                 android:layout_marginTop="24dp"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="0dp"
-                app:cardBackgroundColor="@color/white">
+                app:cardBackgroundColor="@color/bg_surface">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -314,7 +319,7 @@
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:src="@drawable/ic_lightbulb_on"
-                            app:tint="#F9F506" />
+                            app:tint="@color/orange" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -322,7 +327,7 @@
                             android:layout_marginStart="8dp"
                             android:fontFamily="@font/lexend_bold"
                             android:text="Weekly Insight"
-                            android:textColor="#1A1D1E"
+                            android:textColor="@color/text_primary"
                             android:textSize="16sp" />
                     </LinearLayout>
 
@@ -334,7 +339,7 @@
                         android:fontFamily="@font/lexend_medium"
                         android:lineSpacingExtra="4dp"
                         android:text="You've studied 150 more cards compared to last week. Your accuracy in Calculus II has improved significantly."
-                        android:textColor="#4A5568"
+                        android:textColor="@color/text_secondary"
                         android:textSize="14sp" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -348,7 +353,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/lexend_bold"
                             android:text="Weekly Goal Progress"
-                            android:textColor="#718096"
+                            android:textColor="@color/text_secondary"
                             android:textSize="11sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -359,7 +364,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/lexend_bold"
                             android:text="0%"
-                            android:textColor="#718096"
+                            android:textColor="@color/text_secondary"
                             android:textSize="11sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -383,9 +388,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:cardCornerRadius="28dp"
-                app:cardElevation="2dp"
-                app:strokeColor="#EEF2FF"
-                app:strokeWidth="1dp">
+                android:backgroundTint="@color/bg_surface"
+                app:cardElevation="2dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
