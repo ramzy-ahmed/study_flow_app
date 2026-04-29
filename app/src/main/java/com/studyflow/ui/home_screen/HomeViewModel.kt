@@ -100,6 +100,47 @@ class HomeViewModel @Inject constructor(
         }
     }.stateIn(viewModelScope, SharingStarted.Lazily, "0%")
 
+    val currentStreak: StateFlow<Int> = repository.getAllSessionResults().map { sessions ->
+        if (sessions.isEmpty()) return@map 0
+
+        val calendar = Calendar.getInstance()
+        val uniqueDays = sessions.map {
+            calendar.timeInMillis = it.date
+            calendar.set(Calendar.HOUR_OF_DAY, 0)
+            calendar.set(Calendar.MINUTE, 0)
+            calendar.set(Calendar.SECOND, 0)
+            calendar.set(Calendar.MILLISECOND, 0)
+            calendar.timeInMillis
+        }.distinct().sortedDescending()
+
+        if (uniqueDays.isEmpty()) return@map 0
+
+        var streak = 0
+        val today = Calendar.getInstance().apply {
+            set(Calendar.HOUR_OF_DAY, 0)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+        }.timeInMillis
+
+        val yesterday = today - 24 * 60 * 60 * 1000
+
+        // Check if the latest session was today or yesterday
+        val latestSessionDay = uniqueDays.first()
+        if (latestSessionDay < yesterday) return@map 0
+
+        var currentDay = latestSessionDay
+        for (day in uniqueDays) {
+            if (day == currentDay) {
+                streak++
+                currentDay -= 24 * 60 * 60 * 1000
+            } else {
+                break
+            }
+        }
+        streak
+    }.stateIn(viewModelScope, SharingStarted.Lazily, 0)
+
     //
     fun insertDummyData() {
         viewModelScope.launch {

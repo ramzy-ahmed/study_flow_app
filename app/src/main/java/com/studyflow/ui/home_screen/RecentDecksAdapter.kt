@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.studyflow.data.local.entity.DeckWithCards
 import com.studyflow.databinding.ItemRecentDeckBinding
 
@@ -31,10 +32,11 @@ class RecentDecksAdapter(private val onDeckClick: (Int) -> Unit) :
             binding.apply {
                 tvDeckName.text = deckWithCards.deck.title
                 tvLastReview.text = deckWithCards.deck.category
-                tvCardCount.text = "${deckWithCards.cards.size} Cards"
                 
                 deckWithCards.deck.image?.let {
-                    // logic for setting image based on resource ID
+                    Glide.with(binding.root)
+                        .load(it)
+                        .into(deckImage)
                 }
 
                 root.setOnClickListener {

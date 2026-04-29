@@ -24,6 +24,7 @@
             app:cardCornerRadius="12dp"
             android:layout_height="60dp">
             <ImageView
+                android:id="@+id/deckImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -60,18 +61,6 @@
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp" />
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/tvCardCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_badge_soft_blue"
-            android:fontFamily="@font/lexend_bold"
-            android:paddingHorizontal="12dp"
-            android:paddingVertical="6dp"
-            android:text="5 card"
-            android:textColor="@color/primary_blue"
-            android:textSize="11sp" />
 
         <ImageView
             android:layout_width="20dp"

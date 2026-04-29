@@ -180,6 +180,12 @@ class HomeFragment : Fragment() {
                         binding.tvWeeklyFocusDesc.text = "You're up $growth from last week"
                     }
                 }
+
+                launch {
+                    viewModel.currentStreak.collect { streak ->
+                        binding.tvStreak.text = getString(R.string.streak_format, streak)
+                    }
+                }
             }
         }
     }
