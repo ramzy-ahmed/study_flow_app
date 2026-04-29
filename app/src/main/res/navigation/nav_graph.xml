@@ -81,16 +81,18 @@
 
     <fragment
         android:id="@+id/studyFragment"
+        android:name="com.studyflow.ui.study_screen.StudyScreen"
         tools:layout="@layout/fragment_study"
         android:label="StudyFragment" >
         <argument
             android:name="mode"
-            app:argType="com.studyflow.ui.study_screen.StudyScreen$StudyMode" />
+            app:argType="com.studyflow.ui.study_screen.StudyScreen$StudyMode"
+            android:defaultValue="REVIEW" />
         <argument
             android:name="selectedDeck"
             app:argType="integer" />
         <action
-            android:id="@+id/action_cardReview_to_resultsScreen"
+            android:id="@+id/action_studyFragment_to_resultsScreen"
             app:destination="@id/resultFragment" />
     </fragment>
     <fragment
