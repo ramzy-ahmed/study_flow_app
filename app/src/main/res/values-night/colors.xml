@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- الألوان الأساسية -->
+    <color name="primary_blue">#4F46E5</color>
+    <color name="primary_blue_soft">#1A135BEC</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="purple">#8B5CF6</color>
+    <color name="blue">#38BDF8</color>
+    <color name="orange">#FBBF24</color>
+    <color name="green">#34D399</color>
+    <color name="red">#FB7185</color>
+    <color name="indigo">#818CF8</color>
+    <color name="teal">#2DD4BF</color>
+
+    <!-- ألوان الخلفيات -->
+    <color name="bg_app">#0A0D14</color>
+    <color name="bg_surface">#151921</color>
+    <color name="bg_card">#1A1D26</color>
+
+    <!-- الألوان الناعمة -->
+    <color name="soft_bg_blue">#1E3A8A</color>
+    <color name="soft_bg_green">#064E3B</color>
+    <color name="soft_bg_red">#7F1D1D</color>
+    <color name="soft_bg_orange">#78350F</color>
+    <color name="soft_bg_purple">#4C1D95</color>
+    <color name="soft_bg_indigo">#312E81</color>
+    <color name="soft_bg_teal">#134E4A</color>
+
+    <!-- ألوان النصوص -->
+    <color name="text_primary">#F8FAFC</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="text_muted">#64748B</color>
+    <color name="text_label">#94A3B8</color>
+    <color name="text_on_dark">#FFFFFF</color>
+
+    <!-- ألوان الحالات والعناصر -->
+    <color name="tag_history_text">#A5B4FC</color>
+    <color name="tag_history_bg">#312E81</color>
+    <color name="divider_color">#334155</color>
+    <color name="chart_gradient_start">#4D6366F1</color>
+    <color name="chart_gradient_end">#006366F1</color>
+</resources>

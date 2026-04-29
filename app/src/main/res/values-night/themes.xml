@@ -1,8 +1,8 @@
 <resources>
     <!-- Dark theme for dark mode. -->
     <style name="Theme.StudyFlow" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor">#8E2DE2</item>
+        <item name="android:statusBarColor">@color/primary_blue</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="popupMenuStyle">@style/CustomPopupMenu</item>
     </style>
-
 </resources>

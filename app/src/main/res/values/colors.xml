@@ -13,11 +13,12 @@
     <color name="indigo">#4F46E5</color>
     <color name="teal">#0D9488</color>
 
-
-    <!-- ألوان الخلفيات (ستتغير في الوضع الليلي) -->
+    <!-- ألوان الخلفيات -->
     <color name="bg_app">#F8FAFC</color>
     <color name="bg_surface">#FFFFFF</color>
     <color name="bg_card">#FFFFFF</color>
+
+    <!-- الألوان الناعمة -->
     <color name="soft_bg_blue">#DBEEFF</color>
     <color name="soft_bg_green">#F0FDF4</color>
     <color name="soft_bg_red">#FEF2F2</color>
@@ -25,7 +26,6 @@
     <color name="soft_bg_purple">#F3F0FF</color>
     <color name="soft_bg_indigo">#EEF2FF</color>
     <color name="soft_bg_teal">#F0FDFA</color>
-
 
     <!-- ألوان النصوص -->
     <color name="text_primary">#0F172A</color>
