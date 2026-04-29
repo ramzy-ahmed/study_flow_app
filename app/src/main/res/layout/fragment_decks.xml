@@ -47,7 +47,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:menu="@menu/decks_app_bar_menu"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.DayNight"
                 app:subtitle="keep focused ,keep learning"
                 app:title="My Decks" />
 
@@ -67,9 +67,10 @@
                     android:id="@+id/searchBar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
+                    android:background="@color/bg_surface"
                     android:drawableStart="@drawable/ic_search"
-                    android:drawablePadding="12dp"
+                    android:drawablePadding="16dp"
+                    android:drawableTint="@color/text_primary"
                     android:fontFamily="@font/lexend_medium"
                     android:hint="Search your decks..."
                     android:imeOptions="actionSearch"

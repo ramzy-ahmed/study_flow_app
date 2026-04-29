@@ -67,10 +67,6 @@ class DecksFragment : Fragment() {
 
         binding.appBar.setOnMenuItemClickListener { item ->
             when (item.itemId) {
-                R.id.searchBtn -> {
-                    openSearchMode()
-                    true
-                }
                 R.id.addDeck -> {
                     navigateToAddDeck()
                     true
@@ -114,8 +110,6 @@ class DecksFragment : Fragment() {
                 binding.searchBar.clearFocus()
                 hideKeyboard()
             }
-
-            binding.appBar.menu.findItem(R.id.searchBtn)?.isVisible = isCollapsed
         }
     }
     private fun observeState() {
