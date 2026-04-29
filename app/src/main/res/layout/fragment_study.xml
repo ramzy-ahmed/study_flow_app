@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/bg_app">
     <!-- Header Area -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +23,7 @@
             android:src="@drawable/ic_cross"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/text_secondary" />
+            app:tint="@color/text_primary" />
 
         <ImageView
             android:id="@+id/btnReset"
@@ -34,7 +35,7 @@
             android:src="@drawable/ic_rotate_right"
             app:layout_constraintStart_toEndOf="@id/btnClose"
             app:layout_constraintTop_toTopOf="@id/btnClose"
-            app:tint="@color/text_secondary" />
+            app:tint="@color/text_primary" />
 
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/study_progress"
@@ -59,7 +60,7 @@
             android:paddingHorizontal="12dp"
             android:paddingVertical="4dp"
             android:text="12/20"
-            android:textColor="@color/primary_blue"
+            android:textColor="@color/text_primary"
             app:layout_constraintBottom_toBottomOf="@id/btnClose"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/btnClose" />
@@ -116,13 +117,11 @@
                     android:layout_height="64dp"
                     android:layout_margin="4dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#FFF1F2"
+                    android:backgroundTint="@color/soft_bg_red"
                     android:text="Hard"
                     android:textAllCaps="false"
-                    android:textColor="#E11D48"
-                    app:cornerRadius="16dp"
-                    app:strokeColor="#FDA4AF"
-                    app:strokeWidth="1dp" />
+                    android:textColor="@color/red"
+                    app:cornerRadius="16dp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_good"
@@ -130,13 +129,11 @@
                     android:layout_height="64dp"
                     android:layout_margin="4dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#F0F9FF"
+                    android:backgroundTint="@color/soft_bg_blue"
                     android:text="Good"
                     android:textAllCaps="false"
-                    android:textColor="#0284C7"
-                    app:cornerRadius="16dp"
-                    app:strokeColor="#BAE6FD"
-                    app:strokeWidth="1dp" />
+                    android:textColor="@color/blue"
+                    app:cornerRadius="16dp"/>
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_got_it"
@@ -144,13 +141,11 @@
                     android:layout_height="64dp"
                     android:layout_margin="4dp"
                     android:layout_weight="1"
-                    android:backgroundTint="#F0FDF4"
+                    android:backgroundTint="@color/soft_bg_green"
                     android:text="Easy"
                     android:textAllCaps="false"
-                    android:textColor="#16A34A"
-                    app:cornerRadius="16dp"
-                    app:strokeColor="#BBF7D0"
-                    app:strokeWidth="1dp" />
+                    android:textColor="@color/green"
+                    app:cornerRadius="16dp"/>
             </LinearLayout>
 
             <!-- وضع الاختبار: منطقة الإدخال والتحقق -->
@@ -166,9 +161,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Type answer here..."
+                    app:hintTextColor="@color/primary_blue"
                     app:boxCornerRadiusBottomEnd="20dp"
                     app:boxCornerRadiusBottomStart="20dp"
                     app:boxCornerRadiusTopEnd="20dp"
+                    app:boxBackgroundColor="@color/bg_surface"
                     app:boxCornerRadiusTopStart="20dp"
                     app:boxStrokeErrorColor="@color/red"
                     app:boxStrokeColor="@color/primary_blue">
@@ -188,6 +185,7 @@
                     android:backgroundTint="@color/primary_blue"
                     android:fontFamily="@font/lexend_bold"
                     android:text="Check Answer"
+                    android:textColor="@color/white"
                     app:elevation="4dp"
                     android:textSize="16sp"
                     android:textAllCaps="false"
@@ -211,6 +209,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_weight="0.7"
                     android:text="Retry"
+                    android:textColor="@color/primary_blue"
                     android:textAllCaps="false"
                     app:cornerRadius="16dp"
                     app:strokeColor="@color/primary_blue" />
@@ -221,6 +220,7 @@
                     android:layout_height="60dp"
                     android:layout_marginStart="8dp"
                     android:layout_weight="1.3"
+                    android:textColor="@color/white"
                     android:backgroundTint="@color/primary_blue"
                     android:text="Show Answer &amp; Skip"
                     android:textAllCaps="false"

@@ -10,8 +10,8 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:fitsSystemWindows="true"
-        android:background="@android:color/transparent">
+        android:background="@color/bg_app"
+        android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsingToolbar"
@@ -107,7 +107,7 @@
                 android:layout_width="match_parent"
                 android:visibility="visible"
                 app:title="Modern History"
-                app:titleTextColor="@color/white"
+                app:titleTextColor="@color/text_primary"
                 android:elevation="0dp"
                 android:background="@color/bg_surface"
                 app:navigationIcon="@drawable/ic_arrow_small_left"
@@ -124,7 +124,7 @@
                     android:layout_gravity="end"
                     android:layout_marginEnd="16dp"
                     android:src="@drawable/ic_menu_dots_vertical"
-                    app:tint="@color/white" />
+                    app:tint="@color/text_primary" />
 
                 <ImageView
                     android:id="@+id/toolbarBtnEdit"
@@ -134,7 +134,7 @@
                     android:layout_gravity="end"
                     android:layout_marginEnd="4dp"
                     android:src="@drawable/ic_pencil"
-                    app:tint="@color/white" />
+                    app:tint="@color/text_primary" />
 
             </com.google.android.material.appbar.MaterialToolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -202,9 +202,12 @@
                     android:layout_weight="1.6"
                     android:fontFamily="@font/lexend_bold"
                     android:text="Start Session"
+                    android:backgroundTint="@color/primary_blue"
                     android:textAllCaps="false"
+                    android:textColor="@color/white"
                     app:cornerRadius="20dp"
                     app:iconPadding="0dp"
+                    app:iconTint="@color/white"
                     app:icon="@drawable/ic_play_circle" />
 
                 <com.google.android.material.button.MaterialButton
@@ -216,6 +219,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/lexend_bold"
                     android:text="Review"
+                    android:textColor="@color/primary_blue"
                     android:textAllCaps="false"
                     app:cornerRadius="16dp"
                     app:strokeColor="@color/primary_blue" />
@@ -413,7 +417,7 @@
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="2dp"
                     android:text="54"
-                    android:textColor="@color/text_secondary"
+                    android:textColor="@color/text_on_dark"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="@id/tvPreviewTitle"
                     app:layout_constraintStart_toEndOf="@id/tvPreviewTitle"
